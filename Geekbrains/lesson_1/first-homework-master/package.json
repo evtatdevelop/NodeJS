@@ -1,0 +1,23 @@
+{
+  "name": "first-homework",
+  "version": "1.0.0",
+  "description": "There is a console application that gives you current weather, forecast for tomorrow and a funny random joke. Celcius or Fahrenheit degrees are optional, Celsius is default.",
+  "main": "index.js",
+  "dependencies": {
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeryOrange/first-homework.git"
+  },
+  "author": "Valeriya Tokareva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeryOrange/first-homework/issues"
+  },
+  "homepage": "https://github.com/ValeryOrange/first-homework#readme"
+}
