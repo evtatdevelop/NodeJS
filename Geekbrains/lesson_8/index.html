@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>letsChat</title>
+    <style>
+    p {
+      display: flex;
+      align-items: center;
+    }
+    p label {
+      width: 50px;
+      margin-right: 10px;
+    }
+  </style>
+  <script src="http://localhost:9999/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+  <ul id="msgs"></ul>
+  <form id="msgForm" name="msgForm">
+    <p>
+      <label for="name">User</label>
+      <input type="text" id="name" name="name" value="" />
+    </p>
+    <p>
+      <label for="msg">Message</label>
+      <textarea id="msg" name="msg"></textarea>
+    </p>
+    <button type="submit">Send</button>
+  </form>
+</body>
+
+<script>
+  window.onload = function() {
+    const socket = io.connect('http://localhost:9999');
+  }
+
+  const formElement = document.getElementById('msgForm');
+  formElement.addEventListener('submit', event => {
+    event.preventDefault();
+    const formData = new FormData(formElement);
+    console.log({name: formData.get('name'), msg: formData.get('msg')});
+    // document.msgForm.reset();
+    document.getElementById('msg').value = '';
+  });
+</script>
+
+</html>
