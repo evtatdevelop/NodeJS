@@ -1,0 +1,21 @@
+{
+  "name": "theory",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cookie-session": "^2.1.0",
+    "express": "^4.21.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
