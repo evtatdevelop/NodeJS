@@ -33,18 +33,29 @@
 </body>
 
 <script>
-  window.onload = function() {
-    const socket = io.connect('http://localhost:9999');
-  }
+  window.onload = () => { 
+    const socket = io.connect('http://localhost:9999'); 
 
-  const formElement = document.getElementById('msgForm');
-  formElement.addEventListener('submit', event => {
-    event.preventDefault();
-    const formData = new FormData(formElement);
-    console.log({name: formData.get('name'), msg: formData.get('msg')});
-    // document.msgForm.reset();
-    document.getElementById('msg').value = '';
-  });
+
+
+  
+    const formElement = document.getElementById('msgForm');
+    formElement.addEventListener('submit', event => {
+      event.preventDefault();
+      const formData = new FormData(formElement);
+      
+      console.log({name: formData.get('name'), msg: formData.get('msg')});
+      socket.emit('msg', {name: formData.get('name'), msg: formData.get('msg')});
+
+      document.getElementById('msg').value = '';
+
+      socket.on('msg', msgObj => {
+        const li = document.createElement('li');
+        li.innerText = `${date} ${msgObj.name} : ${msgObj.msg}`;
+        document.getElementById('msgs').appendChild(li);
+      });
+    });
+  }
 </script>
 
 </html>
