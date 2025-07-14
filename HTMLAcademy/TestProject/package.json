@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^9.28.0",
+    "eslint-config-htmlacademy": "^10.0.1"
+  }
 }
